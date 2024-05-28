@@ -2,9 +2,17 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const nodeMailer = require('nodemailer');
 require('dotenv').config({ path: './config/config.env' })
+const cors = require('cors');
+const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+app.use(cors({
+    origin: '*', // Replace with your frontend domain or '*' for all origins
+    methods: 'POST',
+    allowedHeaders: 'Content-Type'
+}));
 
 app.use(bodyParser.json());
 
