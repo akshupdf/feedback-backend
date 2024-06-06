@@ -33,7 +33,7 @@ app.post('/feedback',async (req, res)=>{
     
     const mailOptions = {
         from: process.env.SMPT_MAIL,
-        to: "sspl.website.leads@gmail.com",
+        to: "info@sspl.co",
         subject: 'Feedback Received',
         text : `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
     }
